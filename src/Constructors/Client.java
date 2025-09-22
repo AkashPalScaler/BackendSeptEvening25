@@ -17,5 +17,6 @@ public class Client {
         Student.something(s1);
 
         System.out.println("DEBUG");
+
     }
 }
