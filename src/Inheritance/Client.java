@@ -1,5 +1,8 @@
 package Inheritance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     public static void main(String[] args) {
 //        User u = new User();
@@ -10,5 +13,7 @@ public class Client {
 //        s.password = "iugcaid";
         s.setPassword("kjadfiuadbjl");
         System.out.println("DEBUG");
+
+
     }
 }
