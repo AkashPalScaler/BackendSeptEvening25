@@ -14,7 +14,13 @@ public class Client {
         System.out.println("Value of x before process : " + v.x);
         Future<Void> adderFuture =  es.submit(new Adder(v)); // started
         Future<Void> subtFuture =  es.submit(new Subtractor(v)); //started
-
+//       From lambda teaching lecture
+//        es.submit(() -> {
+//            System.out.println("kjb");
+//            return 10;
+//        });
+//        es.submit(() -> 10);
+//        End of lambda teaching lecture
         adderFuture.get(); // Future.get waits till task is over
         subtFuture.get();
 
