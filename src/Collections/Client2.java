@@ -27,6 +27,8 @@ public class Client2 {
         for(Student s : studentList){
             System.out.println(s.getName() + " | " + s.getAge() + " | " + s.getMarks());
         }
+
+        Collections.sort(studentList, (o1,o2) -> o1.getMarks()-o2.getMarks());
         // My collections.sort either accepts a List of comparable type or expects a comparator
 
     }

@@ -53,8 +53,10 @@ public class Client {
         // Method 4: Lambda -> Only on FunctionalInterfaces (all functionalInterfaces)
         // (parameter) -> { lines of code }
         Runnable runnable1 = () -> {
-            System.out.println("Hello World");
+            System.out.println("Hello World Runnable");
         };
+
+        System.out.println("DEBUG");
 
         ExampleInterface ei1 = (x, y) -> {
             System.out.println("ksjbf" + x);
@@ -69,7 +71,7 @@ public class Client {
         t3.start();
 
         Thread t4 = new Thread(() -> System.out.println("Hello"));
-        t3.start();
+        t4.start();
 
         System.out.println("DEBUG");
     }
