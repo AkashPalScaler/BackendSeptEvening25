@@ -38,8 +38,8 @@ public class Client {
 //          somefun(cats); // Doesn't work
           somefun(animals);
 
-          animals = dogs;
-          animals = cats;
+//          animals = dogs;
+//          animals = cats;
 
         // PECS principle -> Producer extends, Consumer supers
           // Upper bound generics
@@ -48,9 +48,9 @@ public class Client {
 //          extendedAnimals = cats;
           Animal a = extendedAnimals.get(0);
           Object o = extendedAnimals.get(0);
-          extendedAnimals.add(new Animal());
-          extendedAnimals.add(new Dog());
-          extendedAnimals.add(new Object());
+//          extendedAnimals.add(new Animal());
+//          extendedAnimals.add(new Dog());
+//          extendedAnimals.add(new Object());
 
 
 
@@ -66,9 +66,9 @@ public class Client {
           superDogs = new ArrayList<Object>();
 
           superDogs.add(new Dog());
-          superDogs.add(new Animal());
-          Dog d1 = superDogs.get(0);
-          Animal a1 = superDogs.get(0);
+//          superDogs.add(new Animal());
+//          Dog d1 = superDogs.get(0);
+//          Animal a1 = superDogs.get(0);
           Object o3 = superDogs.get(0);
 
           addDogToList(new Dog(), animals);
@@ -83,7 +83,7 @@ public class Client {
          // can't add, can't read (except for object)
         Object o2 = someList.get(0);
 
-        List<?> list= someList.get(0);
+//        List<?> list= someList.get(0);
 
         PairP<Integer> p = new PairP<>();
         p.setVar1(10);
