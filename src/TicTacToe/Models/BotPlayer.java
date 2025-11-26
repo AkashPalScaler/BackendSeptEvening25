@@ -1,5 +1,8 @@
 package TicTacToe.Models;
 
+import TicTacToe.Strategies.BotPlayingStrategies.BotPlayingStrategy;
+import TicTacToe.Strategies.BotPlayingStrategies.BotPlayingStrategyFactory;
+
 public class BotPlayer extends Player{
     private BotDifficultyLevel level;
 
@@ -10,9 +13,10 @@ public class BotPlayer extends Player{
 
     @Override
     public Move makeMove(Board board) {
+        System.out.println("It's " + getName() + "'s turn.");
         // Based on the bot difficulty level we should get the bot playing strategy using simple factory
+        BotPlayingStrategy strategy = BotPlayingStrategyFactory.getStrategy(level);
         // Get the Move from the strategy
-        // Validate and return the move
-        return null;
+        return strategy.makeMove(board, this);
     }
 }

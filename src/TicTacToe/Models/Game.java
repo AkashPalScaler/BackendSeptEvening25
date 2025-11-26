@@ -104,6 +104,61 @@ public class Game {
         return new Builder();
     }
 
+    public void makeMove() {
+        // Fetch the current player
+        Player currPlayer = players.get(nextPlayerIndex);
+        // Ask the player to make a move
+        Move move = currPlayer.makeMove(board);
+        // Update the board with the move received from player
+        Cell cell = move.getCell();
+        board.getGrid().get(cell.getR()).get(cell.getC()).setCellState(CellState.FILLED);
+        board.getGrid().get(cell.getR()).get(cell.getC()).setSymbol(currPlayer.getSymbol());
+
+        // Roll to the next user
+        nextPlayerIndex ++;
+        nextPlayerIndex %= players.size(); // 0,1,2,0,1,2,0
+
+        // Update the moveHistory
+        moveHistory.add(move);
+
+        // Check the status and if WIN then update the winner
+        for(WinningStrategy winningStrategy : winningStrategies){
+            if(winningStrategy.checkWinner(board, move)){
+                setStatus(GameStatus.WIN);
+                setWinner(currPlayer);
+                return;
+            }
+        }
+        // Check draw condition and update to DRAW
+        if(moveHistory.size() == (board.getSize()*board.getSize())){
+            setStatus(GameStatus.DRAW);
+        }
+
+//        System.out.println("Game status : " + getStatus());
+    }
+
+    public void undo() {
+        // Remove and Get the last move from move History
+        Move lastMove = moveHistory.getLast();
+        moveHistory.removeLast();
+        // Update the board -> remove the move from the board
+        Cell cell = lastMove.getCell();
+        board.getGrid().get(cell.getR()).get(cell.getC()).setCellState(CellState.EMPTY);
+        board.getGrid().get(cell.getR()).get(cell.getC()).setSymbol(null);
+        // Update the status
+        setStatus(GameStatus.IN_PROGRESS);
+        setWinner(null);
+
+        // playerIndex update
+        nextPlayerIndex --;
+        nextPlayerIndex %= board.getSize();
+
+        // Winning strategy MapCount
+        for(WinningStrategy winningStrategy : winningStrategies){
+            winningStrategy.handleUndo(lastMove);
+        }
+    }
+
     public static class Builder{
         private int size;
         private List<Player> players;

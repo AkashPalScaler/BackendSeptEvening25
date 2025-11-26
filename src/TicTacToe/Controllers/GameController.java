@@ -1,6 +1,7 @@
 package TicTacToe.Controllers;
 
 import TicTacToe.Models.Game;
+import TicTacToe.Models.GameStatus;
 import TicTacToe.Models.Player;
 import TicTacToe.Models.WinningStrategyType;
 
@@ -18,7 +19,23 @@ public class GameController {
                 .build();
     }
 
-    public void displayBoard(Game game1) {
-        game1.getBoard().display();
+    public void displayBoard(Game game) {
+        game.getBoard().display();
+    }
+
+    public GameStatus getGameStatus(Game game) {
+        return game.getStatus();
+    }
+
+    public void makeMove(Game game) {
+        game.makeMove();
+    }
+
+    public Player getWinner(Game game) {
+        return game.getWinner();
+    }
+
+    public void undo(Game game) {
+        game.undo();
     }
 }
