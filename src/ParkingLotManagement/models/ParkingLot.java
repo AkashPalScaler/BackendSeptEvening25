@@ -1,7 +1,8 @@
 package ParkingLotManagement.models;
 
 import java.util.List;
-
+// PL:Gate -> 1:M
+// Gate Table : _,_, PL_id
 public class ParkingLot extends BaseClass {
     String name;
     List<ParkingFloor> floors;

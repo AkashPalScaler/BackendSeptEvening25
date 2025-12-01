@@ -4,6 +4,15 @@ public class Gate extends BaseClass {
     Integer gate_no;
     Operator operator;
     GateStatus status;
+    ParkingLot parkingLot;
+
+    public ParkingLot getParkingLot() {
+        return parkingLot;
+    }
+
+    public void setParkingLot(ParkingLot parkingLot) {
+        this.parkingLot = parkingLot;
+    }
 
     public Gate(Integer gate_no, GateType type, GateStatus status, Operator operator) {
         this.type = type;

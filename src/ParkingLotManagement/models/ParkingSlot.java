@@ -37,4 +37,15 @@ public class ParkingSlot {
         this.allowedVehicles = allowedVehicles;
     }
 
+    public boolean checkAllowedVehicle(VehicleType type){
+//        System.out.println("Type of vehicle"+ type);
+        for(AllowedVehicle vehicle : allowedVehicles){
+//            System.out.println("Allowed Vehicle" + vehicle.type);
+            if(vehicle.getType().equals(type)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

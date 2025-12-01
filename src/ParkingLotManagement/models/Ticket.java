@@ -9,6 +9,16 @@ public class Ticket {
     Operator operator;
     ParkingSlot parkingSlot;
     Vehicle vehicle;
+    static Integer ticketNumber = 0;
+
+    public Ticket(Gate gate, Operator operator, ParkingSlot parkingSlot, Vehicle vehicle) {
+        this.number = ""+ticketNumber++;
+        this.entry_time = new Date();
+        this.gate = gate;
+        this.operator = operator;
+        this.parkingSlot = parkingSlot;
+        this.vehicle = vehicle;
+    }
 
     public Date getEntry_time() {
         return entry_time;
