@@ -1,0 +1,46 @@
+package ParkingLotManagement.models;
+public class Gate extends BaseClass {
+    GateType type;
+    Integer gate_no;
+    Operator operator;
+    GateStatus status;
+
+    public Gate(Integer gate_no, GateType type, GateStatus status, Operator operator) {
+        this.type = type;
+        this.gate_no = gate_no;
+        this.operator = operator;
+        this.status = status;
+    }
+
+    public GateType getType() {
+        return type;
+    }
+
+    public void setType(GateType type) {
+        this.type = type;
+    }
+
+    public Integer getGate_no() {
+        return gate_no;
+    }
+
+    public void setGate_no(Integer gate_no) {
+        this.gate_no = gate_no;
+    }
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
+    }
+
+    public GateStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(GateStatus status) {
+        this.status = status;
+    }
+}

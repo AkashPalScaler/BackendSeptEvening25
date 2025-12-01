@@ -48,6 +48,7 @@ public class Client {
 //          extendedAnimals = cats;
           Animal a = extendedAnimals.get(0);
           Object o = extendedAnimals.get(0);
+
 //          extendedAnimals.add(new Animal());
 //          extendedAnimals.add(new Dog());
 //          extendedAnimals.add(new Object());

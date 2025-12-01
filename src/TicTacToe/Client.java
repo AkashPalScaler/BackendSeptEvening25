@@ -17,7 +17,7 @@ public class Client {
         Scanner sc = new Scanner(System.in);
         // HW: Player creation should be done using UserController -> UserController.createPlayer();
         Player player1 = new HumanPlayer("Akash", 'X');
-        Player player2 = new BotPlayer("Botty", 'O', BotDifficultyLevel.EASY); // String input for level
+        Player player2 = new BotPlayer("Botty", 'O', BotDifficultyLevel.MEDIUM); // String input for level
 
         List<Player> players = new ArrayList<>();
         players.add(player1);

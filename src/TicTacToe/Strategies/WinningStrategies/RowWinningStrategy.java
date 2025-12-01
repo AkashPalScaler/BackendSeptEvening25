@@ -4,7 +4,8 @@ import TicTacToe.Models.Board;
 import TicTacToe.Models.Move;
 
 import java.util.HashMap;
-// 0 -> {x: 1, o:1}, 1 -> {x: , o:}
+// 0 -> {x: 1, o:1}, 1 -> {x: , o:}, 2 -> {x: , o:}
+// [{x: 1, o:1}, {x: 0, o:0}, {x: 1, o:2}]
 public class RowWinningStrategy implements WinningStrategy{
     HashMap<Integer, HashMap<Character, Integer>> rowMap;
 
